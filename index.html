@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guildwars 2 PvP Seasons</title>
+    <link rel="icon" href="./static/gw2-logo-white.png">
+    <meta name="description" content="Guildwars 2 PvP Seasons & Players">
+    <script type="module" src="./js/search.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="search-container">
+            <div class="searchfield-container">
+                <svg height="32" viewBox="0 0 30 32" width="30" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="m23.3291 23.3066-4.35-4.35c-.0105-.0105-.0247-.0136-.0355-.0235a6.8714 6.8714 0 1 0 -1.5736 1.4969c.0214.0256.03.0575.0542.0815l4.35 4.35a1.1 1.1 0 1 0 1.5557-1.5547zm-15.4507-8.582a5.6031 5.6031 0 1 1 5.603 5.61 5.613 5.613 0 0 1 -5.603-5.61z">
+                    </path>
+                </svg>
+                <input id="searchfield" placeholder="Search"></input>
+                <a class="logo" href="./">
+                    <img src="./static/gw2-logo-white.png" alt="Guildwars 2 Logo" height="24" width="36">
+                    PvP Seasons
+                </a>
+            </div>
+            <div id="search-result-container"></div>
+        </div>
+    </nav>
+    <div id="main"></div>
+    <div id="table"></div>
+    <div class="footer">
+        <a href="https://github.com/otis11/gw2-pvp-seasons" target="_blank"><img src="assets/github-mark-white.svg"
+                alt="GitHub link"></a>
+    </div>
+</body>
+<script type="module">
+    import { renderSeasonId, renderLatestSeason } from './js/season.js'
+    import { renderPlayer } from './js/player.js'
+
+    const windowUrl = new URL(window.location.href)
+    const windowUrlSeasonParam = windowUrl.searchParams.get('season')
+    const windowUrlPlayerParam = windowUrl.searchParams.get('player')
+    if (windowUrlSeasonParam) {
+        if (windowUrlSeasonParam === 'latest') {
+            renderLatestSeason()
+        } else {
+            renderSeasonId(windowUrlSeasonParam)
+        }
+    }
+    else if (windowUrlPlayerParam) {
+        renderPlayer(windowUrlPlayerParam)
+    }
+    else {
+        document.getElementById('main').innerHTML = `
+        <div class="hi">Hi, player data includes only top 250 placements.
+            <div class="mt-6">Thanks to <a href="https://github.com/arenanet">@arenanet</a> for providing the API.</div>
+        </div>
+        <a class="searchfield-result mt-6 text-center" href="?season=latest">
+            <svg height="16" viewBox="0 0 9 16" width="9" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="m8.6124 8.1035-2.99 2.99a.5.5 0 0 1 -.7071-.7071l2.1366-2.1364h-6.316a.5.5 0 0 1 0-1h6.316l-2.1368-2.1367a.5.5 0 0 1 .7071-.7071l2.99 2.99a.5.5 0 0 1 .0002.7073z">
+                </path>
+            </svg>Latest Pvp League Season
+        </a>`
+    }
+</script>
+
+</html>

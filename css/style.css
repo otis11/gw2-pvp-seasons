@@ -1,0 +1,247 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.footer {
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer img {
+    height: 32px;
+}
+
+:root {
+    --search-placeholder-color: rgb(134, 134, 139);
+    --foreground-color: #E8E8ED;
+    --background-color: #161617;
+}
+
+body {
+    color: var(--foreground-color);
+    background-color: var(--background-color);
+    max-width: 700px;
+    margin: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#main .searchfield-result {
+    margin-top: 32px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+#searchfield {
+    background-color: transparent;
+    color: var(--foreground-color);
+    height: 40px;
+    outline: none;
+    border: none;
+    font-size: 1.25rem;
+    padding: 1px 8px;
+    width: 100%;
+}
+
+.searchfield-container {
+    fill: var(--search-placeholder-color);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-size: 12px;
+    font-family: fantasy;
+    color: var(--search-placeholder-color);
+    width: 100px;
+    text-decoration: none;
+}
+
+.searchfield-result {
+    padding-inline-start: 8px;
+    padding-inline-end: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    fill: var(--search-placeholder-color);
+    color: var(--search-placeholder-color);
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.searchfield-result-category {
+    color: var(--search-placeholder-color);
+    font-weight: 400;
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+.searchfield-result svg,
+.name svg {
+    margin-inline-end: 11px;
+}
+
+.searchfield-result:hover,
+.name:hover {
+    background-color: rgb(29, 29, 31);
+    color: white;
+}
+
+.search-container {
+    padding: 12px 24px;
+}
+
+#search-result-container {
+    margin-top: 32px;
+}
+
+.name {
+    fill: var(--search-placeholder-color);
+    color: var(--search-placeholder-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    word-break: break-all;
+}
+
+.row .date,
+.row .name {
+    width: 180px;
+    min-width: 180px;
+    text-align: center;
+}
+
+.row .name.season,
+.row .season {
+    width: 290px;
+    min-width: 290px;
+}
+
+.row .season {
+    text-align: center;
+}
+
+.hi {
+    padding-top: 48px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.seasons-played {
+    color: var(--search-placeholder-color);
+    font-size: 14px;
+}
+
+.mt-6 {
+    margin-top: 24px !important;
+}
+
+.row .name {
+    text-align: left;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding-top: 4px;
+    width: fit-content;
+    margin: auto;
+}
+
+body,
+html {
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.row div,
+.row a {
+    width: 70px;
+    min-width: 70px;
+    text-align: right;
+    padding-inline-start: 8px;
+    padding-inline-end: 8px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-radius: 5px;
+}
+
+.status-active {
+    color: green;
+}
+
+.status-inactive {
+    color: red;
+}
+
+.fit {
+    width: fit-content;
+    margin: auto;
+}
+
+.pb-6 {
+    padding-bottom: 24px;
+}
+
+#table {
+    overflow: auto;
+    margin: auto;
+}
+
+.row.table-header div {
+    font-weight: bold;
+    color: white;
+    justify-content: center;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+body {
+    padding: 0 24px 24px 24px;
+}
+
+.label {
+    width: 160px;
+    min-width: 160px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px;
+}
+
+.pb-10 {
+    padding-bottom: 40px;
+}
+
+.player-name {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
